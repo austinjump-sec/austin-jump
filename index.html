@@ -6,253 +6,64 @@
     <title>Austin Jump - Cybersecurity Portfolio</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Courier New', monospace; 
-            background: #0a0e27; 
-            color: #e7f5d7; 
-            line-height: 1.6;
-        }
+        body { font-family: 'Courier New', monospace; background: #0a0e27; color: #e7f5d7; line-height: 1.6; }
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        header { 
-            border-bottom: 2px solid #e7f5d7; 
-            padding-bottom: 20px; 
-            margin-bottom: 40px;
-        }
+        header { border-bottom: 2px solid #e7f5d7; padding-bottom: 20px; margin-bottom: 40px; }
         h1 { font-size: 2.5em; margin-bottom: 10px; }
         .subtitle { color: #888; font-size: 1.1em; margin-bottom: 20px; }
-        .skills-category{
-            border: 2px solid #e7f5d7;
-            background: rgba(130, 10, 65, 0.1);
-            border-radius: 5px;   
-            padding: 20px; 
-            margin: 15px 0; 
-        }
-        .section { 
-            margin: 40px 0; 
-            padding: 20px; 
-            border-left: 4px solid #e7f5d7;
-            background: rgba(100, 155, 165, 0.05);
-        }
+        .skills-category { border: 2px solid #e7f5d7; background: rgba(130, 10, 65, 0.1); border-radius: 5px; padding: 20px; margin: 15px 0; }
+        .section { margin: 40px 0; padding: 20px; border-left: 4px solid #e7f5d7; background: rgba(100, 155, 165, 0.05); }
         .section h2 { margin-bottom: 20px; font-size: 1.8em; }
-        .project-card { 
-            background: rgba(100, 10, 65, 0.1); 
-            padding: 20px; 
-            margin: 15px 0; 
-            border-radius: 5px;
-            border: 1px solid #e7f5d7;
-        }
+        .project-card { background: rgba(100, 10, 65, 0.1); padding: 20px; margin: 15px 0; border-radius: 5px; border: 1px solid #e7f5d7; }
         .project-card h3 { margin-bottom: 10px; color: #e7f5d7; }
         .project-card p { margin: 8px 0; color: #ccc; }
         .links { display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap; }
-        .links a { 
-            color: #e7f5d7; 
-            text-decoration: none; 
-            border: 1px solid #e7f5d7; 
-            padding: 10px 20px;
-            border-radius: 3px;
-            transition: all 0.3s;
-        }
-        .links a:hover { 
-            background: #e7f5d7; 
-            color: #0a0e27;
-        }
-            .button {
-    background-color: #e7f5d7;
-    color: #0a0e27;
-    border: 2px solid #e7f5d7;
-    padding: 10px 25px;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-}
-
-.button:hover {
-    background-color: transparent;
-    color: #e7f5d7;
-}
+        .links a { color: #e7f5d7; text-decoration: none; border: 1px solid #e7f5d7; padding: 10px 20px; border-radius: 3px; transition: all 0.3s; }
+        .links a:hover { background: #e7f5d7; color: #0a0e27; }
+        .button { background-color: #e7f5d7; color: #0a0e27; border: 2px solid #e7f5d7; padding: 10px 25px; font-family: 'Courier New', monospace; font-weight: bold; font-size: 1em; border-radius: 5px; cursor: pointer; transition: background-color 0.3s, color 0.3s; display: inline-block; text-align: center; text-decoration: none; }
+        .button:hover { background-color: transparent; color: #e7f5d7; }
         .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 30px 0; }
-        .stat-box { 
-            background: rgba(100, 10, 65, 0.1); 
-            padding: 20px; 
-            border-radius: 5px;
-            text-align: center;
-            border: 1px solid #e7f5d7;
-        }
+        .stat-box { background: rgba(100, 10, 65, 0.1); padding: 20px; border-radius: 5px; text-align: center; border: 1px solid #e7f5d7; }
         .stat-number { font-size: 2em; color: #e7f5d7; font-weight: bold; }
         .stat-label { color: #888; margin-top: 10px; }
-        .skill-tag { 
-            display: inline-block; 
-            background: #e7f5d7; 
-            color: #0a0e27; 
-            padding: 5px 12px; 
-            margin: 5px 5px 5px 0; 
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        footer { 
-            border-top: 1px solid #e7f5d7; 
-            padding-top: 20px; 
-            margin-top: 60px; 
-            text-align: center; 
-            color: #888;
-        }
-        .offset-box {
-    grid-column: 2 / 2.5;
-}
-
-
-
-        /* Mature cyber visual refresh */
-        :root {
-            --bg: #070b12;
-            --surface: #0d141d;
-            --surface-raised: #111b27;
-            --line: #263746;
-            --text: #d7e2e8;
-            --muted: #81909c;
-            --accent: #62e6c5;
-            --accent-soft: rgba(98, 230, 197, 0.12);
-            --accent-blue: #79a9ff;
-        }
-
+        .skill-tag { display: inline-block; background: #e7f5d7; color: #0a0e27; padding: 5px 12px; margin: 5px 5px 5px 0; border-radius: 3px; font-size: 0.9em; }
+        footer { border-top: 1px solid #e7f5d7; padding-top: 20px; margin-top: 60px; text-align: center; color: #888; }
+        .offset-box { grid-column: 2 / 2.5; }
+        :root { --bg: #070b12; --surface: #0d141d; --surface-raised: #111b27; --line: #263746; --text: #d7e2e8; --muted: #81909c; --accent: #62e6c5; --accent-soft: rgba(98, 230, 197, 0.12); --accent-blue: #79a9ff; }
         html { scroll-behavior: smooth; }
-        body {
-            background:
-                linear-gradient(rgba(7, 11, 18, 0.94), rgba(7, 11, 18, 0.98)),
-                repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(255,255,255,0.012) 4px),
-                radial-gradient(circle at 85% 0%, rgba(30, 111, 126, 0.2), transparent 35%),
-                var(--bg);
-            color: var(--text);
-            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            line-height: 1.7;
-        }
+        body { background: linear-gradient(rgba(7, 11, 18, 0.94), rgba(7, 11, 18, 0.98)), repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(255,255,255,0.012) 4px), radial-gradient(circle at 85% 0%, rgba(30, 111, 126, 0.2), transparent 35%), var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.7; }
         .container { max-width: 1120px; padding: 64px 28px; }
-        header {
-            border-bottom: 1px solid var(--line);
-            padding: 28px 0 32px;
-            margin-bottom: 52px;
-            position: relative;
-        }
-        header::before {
-            display: block;
-            color: var(--accent);
-            font: 600 0.72rem/1.2 "Courier New", monospace;
-            letter-spacing: 0.18em;
-            margin-bottom: 20px;
-        }
-        header::after {
-            content: "";
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 72px;
-            height: 3px;
-            background: var(--accent);
-            box-shadow: 0 0 14px rgba(98, 230, 197, 0.6);
-        }
-        h1 {
-            color: #f1f7f6;
-            font: 700 clamp(2rem, 5vw, 3.6rem)/1.1 "Courier New", monospace;
-            letter-spacing: -0.06em;
-            margin-bottom: 14px;
-        }
+        header { border-bottom: 1px solid var(--line); padding: 28px 0 32px; margin-bottom: 52px; position: relative; }
+        header::before { display: block; color: var(--accent); font: 600 0.72rem/1.2 "Courier New", monospace; letter-spacing: 0.18em; margin-bottom: 20px; }
+        header::after { content: ""; position: absolute; bottom: -2px; left: 0; width: 72px; height: 3px; background: var(--accent); box-shadow: 0 0 14px rgba(98, 230, 197, 0.6); }
+        h1 { color: #f1f7f6; font: 700 clamp(2rem, 5vw, 3.6rem)/1.1 "Courier New", monospace; letter-spacing: -0.06em; margin-bottom: 14px; }
         .subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 26px; }
         .subtitle::before { content: "// "; color: var(--accent); }
         .links { gap: 10px; margin: 26px 0 0; }
-        .links a, .button {
-            color: var(--accent);
-            background: transparent;
-            border: 1px solid var(--line);
-            border-radius: 2px;
-            padding: 9px 15px;
-            font: 600 0.78rem/1.2 "Courier New", monospace;
-            letter-spacing: 0.04em;
-            transition: 180ms ease;
-        }
-        .links a:hover, .button:hover {
-            color: var(--bg);
-            background: var(--accent);
-            border-color: var(--accent);
-            box-shadow: 0 0 18px rgba(98, 230, 197, 0.22);
-            transform: translateY(-2px);
-        }
-        .section {
-            margin: 54px 0;
-            padding: 0;
-            border-left: 0;
-            background: none;
-        }
-        .section h2 {
-            color: #f1f7f6;
-            font: 650 1.15rem/1.3 "Courier New", monospace;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            margin-bottom: 22px;
-        }
-        .section h2::before {
-            content: ">_ ";
-            color: var(--accent);
-        }
-        .stats {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin: 0;
-        }
-        .stat-box, .project-card, .skills-category {
-            background: linear-gradient(145deg, rgba(17, 27, 39, 0.95), rgba(10, 17, 25, 0.95));
-            border: 1px solid var(--line);
-            border-radius: 3px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.16);
-        }
+        .links a, .button { color: var(--accent); background: transparent; border: 1px solid var(--line); border-radius: 2px; padding: 9px 15px; font: 600 0.78rem/1.2 "Courier New", monospace; letter-spacing: 0.04em; transition: 180ms ease; }
+        .links a:hover, .button:hover { color: var(--bg); background: var(--accent); border-color: var(--accent); box-shadow: 0 0 18px rgba(98, 230, 197, 0.22); transform: translateY(-2px); }
+        .section { margin: 54px 0; padding: 0; border-left: 0; background: none; }
+        .section h2 { color: #f1f7f6; font: 650 1.15rem/1.3 "Courier New", monospace; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 22px; }
+        .section h2::before { content: ">_ "; color: var(--accent); }
+        .stats { grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0; }
+        .stat-box, .project-card, .skills-category { background: linear-gradient(145deg, rgba(17, 27, 39, 0.95), rgba(10, 17, 25, 0.95)); border: 1px solid var(--line); border-radius: 3px; box-shadow: 0 12px 30px rgba(0,0,0,0.16); }
         .stat-box { padding: 20px 16px; min-height: 118px; }
         .stat-number { color: var(--accent); font: 700 1.8rem/1.2 "Courier New", monospace; }
         .stat-label { color: var(--muted); font-size: 0.78rem; margin-top: 9px; }
         .stat-label a { color: var(--accent-blue) !important; }
         .offset-box { grid-column: auto; }
-        .project-card {
-            padding: 26px;
-            margin: 14px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .project-card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; bottom: 0;
-            width: 3px;
-            background: var(--accent);
-            opacity: 0.8;
-        }
+        .project-card { padding: 26px; margin: 14px 0; position: relative; overflow: hidden; }
+        .project-card::before { content: ""; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: var(--accent); opacity: 0.8; }
         .project-card:hover { border-color: #3d5966; transform: translateY(-2px); transition: 180ms ease; }
         .project-card h3 { color: #f1f7f6; font: 650 1.1rem/1.4 "Courier New", monospace; margin-bottom: 12px; }
         .project-card h4, .project-card h5 { color: var(--muted); font-size: 0.86rem; font-weight: 500; margin: 8px 0; }
         .project-card p, .project-card li { color: #aab8c1; font-size: 0.92rem; }
         .project-card a, .section a { color: var(--accent) !important; }
-        .skill-tag {
-            background: var(--accent-soft);
-            color: var(--accent);
-            border: 1px solid rgba(98, 230, 197, 0.25);
-            padding: 4px 9px;
-            margin: 5px 4px 0 0;
-            border-radius: 2px;
-            font: 600 0.72rem/1.4 "Courier New", monospace;
-        }
+        .skill-tag { background: var(--accent-soft); color: var(--accent); border: 1px solid rgba(98, 230, 197, 0.25); padding: 4px 9px; margin: 5px 4px 0 0; border-radius: 2px; font: 600 0.72rem/1.4 "Courier New", monospace; }
         .skills-category { padding: 24px; color: var(--muted); }
         footer { border-top: 1px solid var(--line); color: var(--muted); }
-        @media (max-width: 700px) {
-            .container { padding: 34px 18px; }
-            .stats { grid-template-columns: repeat(2, 1fr); }
-            .project-card { padding: 21px; }
-        }
-        @media (max-width: 430px) {
-            .stats { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 700px) { .container { padding: 34px 18px; } .stats { grid-template-columns: repeat(2, 1fr); } .project-card { padding: 21px; } }
+        @media (max-width: 430px) { .stats { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -263,295 +74,156 @@
             <div class="links">
                 <a href="https://github.com/austinjump-sec">GitHub</a>
                 <a href="https://app.hackthebox.com/users/3286941?profile-top-tab=machines&ownership-period=1M&profile-bottom-tab=prolabs">HackTheBox</a>
-                 <a href="https://hackerone.com/austinjump-sec?type=user">
-                 HackerOne
-                </a>
+                <a href="https://hackerone.com/austinjump-sec?type=user">HackerOne</a>
             </div>
         </header>
 
         <section class="section">
             <h2>Quick Overview</h2>
             <div class="stats">
-                <div class="stat-box">
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">HTB Machines Rooted</div>
-                </div>
-                <div class='stat-box'>
-                  <div class="stat-number">3</div>
-                  <div class="stat-label"><a href="https://github.com/austinjump-sec/HTB-Write-Ups" style="color: #e7f5d7;">Published HTB Writeups</a></div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">7</div>
-                    <div class="stat-label">Production Projects</div>
-                </div>
-                <div class="offset-box">
-                  <div class="stat-box">
-              
-                  <div class="stat-number">1</div>
-                   <div class="stat-label">Closed Security Report</div>
-                  </div>
-                </div>
-                <div class ="offset-box">
-                  <div class="stat-box">
-                      <div class="stat-number">Security+</div>
-                   <div class="stat-label">In Progress</div>
-                  </div>
-                  </div>
-                  <div class="offset-box">
-                                <div class="stat-box">
-                    <div class="stat-number">2</div>
-                    <div class="stat-label">Open Source PRs</div>
-                </div>
-                </div>
-                
+                <div class="stat-box"><div class="stat-number">12</div><div class="stat-label">HTB Machines Rooted</div></div>
+                <div class="stat-box"><div class="stat-number">3</div><div class="stat-label"><a href="https://github.com/austinjump-sec/HTB-Write-Ups" style="color: #e7f5d7;">Published HTB Writeups</a></div></div>
+                <div class="stat-box"><div class="stat-number">9</div><div class="stat-label">Production Projects</div></div>
+                <div class="offset-box"><div class="stat-box"><div class="stat-number">1</div><div class="stat-label">Closed Security Report</div></div></div>
+                <div class="offset-box"><div class="stat-box"><div class="stat-number">Security+</div><div class="stat-label">In Progress</div></div></div>
+                <div class="offset-box"><div class="stat-box"><div class="stat-number">2</div><div class="stat-label">Open Source PRs</div></div></div>
             </div>
         </section>
-        <section class='section'>
-        
-          <h2>Work Experience</h2>
-          <div class='project-card'>
-          <h3> Founding Python Engineer — Triton Sentinel </h3>
-          <h6>July 2026 - Present</h6>
-          <h5>
 
-Building and maintaining an AI-assisted penetration-testing platform supporting automated reconnaissance, command execution, vulnerability analysis, attack-path visualization, and human approval workflows.
-</h5>
-<ul>
-  <li>Implementing, refactoring, and maintaining a full penetration testing methodology, orchestrated by a customizable local AI</li>
-<li>Developing AI-assisted analysis and visualization of reconnaissance and exploitation results.
-  
-<li>Implementing human-in-the-loop controls for security-sensitive actions.
-<li>Contributing architectural and product decisions to an early-stage security platform.</h5>
-   
-</ul>
-       <a href='https://tritonsentinel.com'  style="color: #e7f5d7;">View Website </a>
-          </div>
-          </section>
-         <section class="section">
-           <h2>Public Security Reports</h3>
-                <div class="project-card">
-                  <h3>java-tron | Tron Dao | Vulnerability Finding</h1>
-                  <h4>Summary: Cryptographic Materials Exposed From Unauthenticated gRPC Endpoints</h2>
-                  <h5> Status: Closed as duplicate</h5>
-                  <a href="https://github.com/tronprotocol/java-tron/issues/6872" style="color: #e7f5d7;">
-                  View Detailed GitHub Issue →
-                  </a>
-                </div>
+        <section class="section">
+            <h2>Work Experience</h2>
+            <div class="project-card">
+                <h3>Founding Python Engineer — Triton Sentinel</h3>
+                <h6>July 2026 - Present</h6>
+                <h5>Building and maintaining an AI-assisted penetration-testing platform supporting automated reconnaissance, command execution, vulnerability analysis, attack-path visualization, and human approval workflows.</h5>
+                <ul>
+                    <li>Implementing, refactoring, and maintaining a full penetration testing methodology, orchestrated by a customizable local AI.</li>
+                    <li>Developing AI-assisted analysis and visualization of reconnaissance and exploitation results.</li>
+                    <li>Implementing human-in-the-loop controls for security-sensitive actions.</li>
+                    <li>Contributing architectural and product decisions to an early-stage security platform.</li>
+                </ul>
+                <a href="https://tritonsentinel.com" style="color: #e7f5d7;">View Website</a>
+            </div>
         </section>
-        <section class='section'>
-          <h2>Open Source Contributions/Pull Requests</h2>
-          <div class="project-card">
-            <h3> Shopify CLI </h3>
-            <h4> Summary: Opened patch to harden software's header block list to block malicious proxy spoofing headers</h4>
-            <h5> Status: Closed - not merged</h5>
-            <a href="https://github.com/Shopify/cli/pull/8146" style="color: #e7f5d7;">
-                  View Detailed GitHub PR →
-                  </a>
-          </div>
-          <div class="project-card">
-            <h3> Shopify CLI </h3>
-            <h4>Summary: Opened patch to filter allowed data to be sent after analyzing sensitive data being sent to telemetry servers locally </h4>
-                    <h5> Status: Closed - not merged</h5>
-                      <a href="https://github.com/Shopify/cli/pull/8163" style="color: #e7f5d7;">
-                  View Detailed GitHub PR →
-                  </a>
-          </div>
+
+        <section class="section">
+            <h2>Public Security Reports</h2>
+            <div class="project-card">
+                <h3>java-tron | Tron Dao | Vulnerability Finding</h3>
+                <h4>Summary: Cryptographic Materials Exposed From Unauthenticated gRPC Endpoints</h4>
+                <h5>Status: Closed as duplicate</h5>
+                <a href="https://github.com/tronprotocol/java-tron/issues/6872" style="color: #e7f5d7;">View Detailed GitHub Issue →</a>
+            </div>
         </section>
+
+        <section class="section">
+            <h2>Open Source Contributions/Pull Requests</h2>
+            <div class="project-card">
+                <h3>Shopify CLI</h3>
+                <h4>Summary: Opened patch to harden software's header block list to block malicious proxy spoofing headers</h4>
+                <h5>Status: Closed - not merged</h5>
+                <a href="https://github.com/Shopify/cli/pull/8146" style="color: #e7f5d7;">View Detailed GitHub PR →</a>
+            </div>
+            <div class="project-card">
+                <h3>Shopify CLI</h3>
+                <h4>Summary: Opened patch to filter allowed data to be sent after analyzing sensitive data being sent to telemetry servers locally</h4>
+                <h5>Status: Closed - not merged</h5>
+                <a href="https://github.com/Shopify/cli/pull/8163" style="color: #e7f5d7;">View Detailed GitHub PR →</a>
+            </div>
+        </section>
+
         <section class="section">
             <h2>Featured Projects</h2>
-            
             <div class="project-card">
                 <h3>Spot-The-Vuln</h3>
                 <p><strong>Interactive, competitive vulnerability identification platform</strong></p>
                 <p>A gamified CTF-style platform that teaches vulnerability spotting across multiple languages. Features real CVEs sourced from CVEfixes dataset, including:</p>
                 <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>JavaScript: RCE, crypto failures, deserialization, prototype pollution</li>
-                    <li>PHP: SQL injection, LFI, XSS, object injection</li>
-                    <li>SQL: SQL injection, excessive privileges, blind SQLi</li>
-                    <li>C: Buffer overflow, format strings, UAF</li>
-                    <li>Assembly x86: Stack pivots, ROP gadgets</li>
+                    <li>JavaScript: RCE, crypto failures, deserialization, prototype pollution</li><li>PHP: SQL injection, LFI, XSS, object injection</li><li>SQL: SQL injection, excessive privileges, blind SQLi</li><li>C: Buffer overflow, format strings, UAF</li><li>Assembly x86: Stack pivots, ROP gadgets</li>
                 </ul>
                 <p style="margin-top: 15px;"><strong>Tech Stack:</strong> JavaScript, Firestore, GitHub OAuth</p>
                 <p><strong>Live Demo:</strong> <a href="https://spot-the-vuln.firebaseapp.com/" style="color: #e7f5d7;">spot-the-vuln.firebaseapp.com</a></p>
-                <div style="margin-top: 10px;">
-                    <span class="skill-tag">Vulnerability Analysis</span>
-                    <span class="skill-tag">CVE Research</span>
-                    <span class="skill-tag">Full-Stack</span>
-                    <span class="skill-tag">Firebase</span>
-                </div>
+                <div style="margin-top: 10px;"><span class="skill-tag">Vulnerability Analysis</span><span class="skill-tag">CVE Research</span><span class="skill-tag">Full-Stack</span><span class="skill-tag">Firebase</span></div>
             </div>
-                 <div class="project-card">
-              <h3>CoffeeAlarm</h3>
-              <p><strong>Android React Native application that utilizes ESP32 hardware and mDNS networking to physically press a coffee machines button on alarm</strong></p>
-              <p>Demonstrates mobile-engineering, advanced networking solutions, DIY hardware and arduino computing</p>
-              <p> Tested firmware on a real ESP32, compared  motors strength to the buttons resistance, and set up a working dirt cheap rig with parts scrapped from my kitchen. </p>
-                       <p style="margin-top: 15px;"><strong>Tech Stack:</strong> React Native, Android Libraries, Arduino/C, ESP32 and motor servo hardware, HTTP Hosting for storage, mDNS for synchronization</p>
- 
-              <p>Strong Features: </p>
-              <ul style="margin-left: 20px; margin-top: 10px;">
-                <li>mDNS Broadcasting</li>
-                <li>ESP32 Signal Deliverance and HTTP Storage</li>
-                <li>Android Alarm Management </li>
-                <li>Included Template Firmware, configurable JSON for DIY additions, and a helpful in-app guide.</li>
-                </ul>
-                 <p><strong>GitHub Repo:</strong> <a href="https://github.com/austinjump-sec/Coffee-Alarm" style="color: #e7f5d7;">austinjump-sec/Coffee-Alarm</a></p>
-                      <div style="margin-top: 10px;">
-                    <span class="skill-tag">Android Development</span>
-                    <span class="skill-tag">React Native</span>
-                    <span class="skill-tag">Android Architecture</span>
-                    <span class="skill-tag">Practical Hardware and Networking Solutions </span>
-                </div>
+            <div class="project-card">
+                <h3>CoffeeAlarm</h3>
+                <p><strong>Android React Native application that utilizes ESP32 hardware and mDNS networking to physically press a coffee machine's button on alarm.</strong></p>
+                <p>Demonstrates mobile engineering, networking, DIY hardware, and Arduino computing. Tested firmware on a real ESP32 and built a working low-cost rig from repurposed household parts.</p>
+                <p style="margin-top: 15px;"><strong>Tech Stack:</strong> React Native, Android libraries, Arduino/C, ESP32 servo hardware, HTTP storage, and mDNS synchronization.</p>
+                <p><strong>Strong Features:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;"><li>mDNS broadcasting</li><li>ESP32 signal delivery and HTTP storage</li><li>Android alarm management</li><li>Template firmware, configurable JSON, and an in-app guide</li></ul>
+                <p><strong>GitHub Repo:</strong> <a href="https://github.com/austinjump-sec/Coffee-Alarm" style="color: #e7f5d7;">austinjump-sec/Coffee-Alarm</a></p>
+                <div style="margin-top: 10px;"><span class="skill-tag">Android Development</span><span class="skill-tag">React Native</span><span class="skill-tag">Android Architecture</span><span class="skill-tag">Hardware and Networking</span></div>
             </div>
             <div class="project-card">
                 <h3>API-SPY</h3>
-                <p><strong>Precise, fast, and tailorable directory brute forcer with API probing capabilites</strong></p>
+                <p><strong>Precise, fast, and tailorable directory brute forcer with API probing capabilities</strong></p>
                 <p>Demonstrates interactive design to process multiple operations at once, with one command. Features:</p>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Interactive design to make enumeration automated while maintaining the same benefits as manual enumeration</li>
-                    <li>Automated JavaScript file scanner to find hardcoded API endpoints (alongside wordlist)</li>
-                    <li>Multi-plex terminal operations so pentesters may dig deep and fast</li>
-                    <li>HTTP probing to help identify API vulnerabilities quickly in one command</li>
-                </ul>
-                <p style="margin-top: 15px;"><strong>Strong Assets:</strong> Parallel processing, Complex I/O operations, Multi-thread scanning, HTTP methods, File scanning capabilities</p>
-                  <p><strong>Github Repo:</strong> <a href="https://github.com/austinjump-sec/API-SPY" style="color: #e7f5d7;">austinjump-sec/API-SPY</a></p>
-              <div style="margin-top: 10px;">
-                    <span class="skill-tag">Penetration Testing</span>
-                    <span class="skill-tag">Web Security</span>
-                    <span class="skill-tag">API</span>
-                    <span class="skill-tag">HTTP</span>
-                </div>
+                <ul style="margin-left: 20px; margin-top: 10px;"><li>Interactive enumeration that retains the benefits of manual testing</li><li>JavaScript file scanner for hardcoded API endpoints alongside wordlists</li><li>Multiplexed terminal operations for efficient enumeration</li><li>HTTP probing to help identify API vulnerabilities</li></ul>
+                <p style="margin-top: 15px;"><strong>Strong Assets:</strong> Parallel processing, complex I/O operations, multithreaded scanning, HTTP methods, and file scanning.</p>
+                <p><strong>GitHub Repo:</strong> <a href="https://github.com/austinjump-sec/API-SPY" style="color: #e7f5d7;">austinjump-sec/API-SPY</a></p>
+                <div style="margin-top: 10px;"><span class="skill-tag">Penetration Testing</span><span class="skill-tag">Web Security</span><span class="skill-tag">API</span><span class="skill-tag">HTTP</span></div>
             </div>
-                <div class='project-card'>
+            <div class="project-card">
                 <h3>XSgrep</h3>
                 <p><strong>Extra Small ~200 LoC x86-64 Assembly text-search utility with a naive substring-search algorithm.</strong></p>
                 <p>Demonstrates low-level design, manual byte-level data management, and register manipulation. Features:</p>
-                 <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Parses command-line arguments.</li>
-                    <li>Open and reads specified files.</li>
-                    <li>Uses an algorithmic loop to find all matching lines, checking file in chunks of 4096 bytes against specified keyword.</li>
-                    <li>Prints every line and line number matching with user keyword.</li>
-                    <li>Built as an exercise in understanding Linux system calls, x86-64 registers, memory buffers, and low-level file processing.</li>
-                </ul>
-                <p><strong>Github Repository:</strong> <a href="https://github.com/austinjump-sec/XSgrep" style="color: #e7f5d7;">austinjump-sec/XSgrep</a></p>
-               <div style="margin-top: 10px;">
-                    <span class="skill-tag">x86-64 Assembly</span>
-                    <span class="skill-tag">Algorithmic Design</span>
-                    <span class="skill-tag">Register and memory management</span>
-                    <span class="skill-tag">Linux Internals</span>
-                </div>
+                <ul style="margin-left: 20px; margin-top: 10px;"><li>Parses command-line arguments.</li><li>Opens and reads specified files.</li><li>Searches file chunks against the requested keyword.</li><li>Prints every matching line and its line number.</li><li>Explores Linux system calls, x86-64 registers, memory buffers, and low-level file processing.</li></ul>
+                <p><strong>GitHub Repository:</strong> <a href="https://github.com/austinjump-sec/XSgrep" style="color: #e7f5d7;">austinjump-sec/XSgrep</a></p>
+                <div style="margin-top: 10px;"><span class="skill-tag">x86-64 Assembly</span><span class="skill-tag">Algorithmic Design</span><span class="skill-tag">Register and Memory Management</span><span class="skill-tag">Linux Internals</span></div>
             </div>
             <div class="project-card">
-              <h3>Custom-RF-Kalman-Scanner-4-SDR</h3>
-              <p><strong>Accurate and lightweight SDR scanner for custom radio frequencies. Compatible with Raspberry Pi, requires RTL-SDR adapter</strong></p>
-              <p>Demonstrates RF and low-level hardware skills. Features: </p>
-              <ul style="margin-left: 20px; margin-top: 10px;">
-                <li>Welch and Kalman filtering</li>
-                <li>Custom frequency input to scan</li>
-                <li>Passive and accurate signal detection</li>
-              </ul>
-              <p> <strong>Strong Assets:</strong> Strong algorithmic filters for accuracy, I/O operations, signal detection, frequency customization</p>
-              <p><strong>Github Repo:</strong> <a href="https://github.com/austinjump-sec/Custom-RF-Kalman-Scanner-4-SDR" style="color: #e7f5d7;">austinjump-sec/Custom-RF-Kalman... </a></p>
-                  <div style="margin-top: 10px;">
-                    <span class="skill-tag">Radio Frequencies</span>
-                    <span class="skill-tag">Low-level protocols</span>
-                    <span class="skill-tag">Low-level hardware</span>
-                    <span class="skill-tag">Algorithmic filtering</span>
-                </div>
+                <h3>Custom-RF-Kalman-Scanner-4-SDR</h3>
+                <p><strong>Accurate and lightweight SDR scanner for custom radio frequencies. Compatible with Raspberry Pi and requires an RTL-SDR adapter.</strong></p>
+                <p>Demonstrates RF and low-level hardware skills. Features:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;"><li>Welch and Kalman filtering</li><li>Custom frequency input to scan</li><li>Passive signal detection</li></ul>
+                <p><strong>Strong Assets:</strong> Algorithmic filters for accuracy, I/O operations, signal detection, and frequency customization.</p>
+                <p><strong>GitHub Repo:</strong> <a href="https://github.com/austinjump-sec/Custom-RF-Kalman-Scanner-4-SDR" style="color: #e7f5d7;">austinjump-sec/Custom-RF-Kalman-Scanner-4-SDR</a></p>
+                <div style="margin-top: 10px;"><span class="skill-tag">Radio Frequencies</span><span class="skill-tag">Low-level Protocols</span><span class="skill-tag">Low-level Hardware</span><span class="skill-tag">Algorithmic Filtering</span></div>
             </div>
-            
-       
             <div class="project-card">
-              <h3>Super Smash Blox</h3>
-              <p><strong>Multiplayer Fighting Game Made in Roblox's Luau Language. Under Beta development</strong></p>
-              <p>Demonstrates client-server data flow and security hardening</p>
-              <p>Strong Features: </p>
-              <ul style="margin-left: 20px; margin-top: 10px;">
-                <li>Client-Server Security Hardening</li>
-                <li>Client-Server Architecture</li>
-                <li>3D Physics Manipulation</li>
-                <li>UI Creation and Scripting </li>
-                <li>Multiplayer Lobby System with Map Selection Screen</li>
-                </ul>
-                <p><strong>Live Demo:</strong> <a href="https://www.roblox.com/games/96017884341789/Super-Smash-Blox" style="color: #e7f5d7;">Super Smash Blox on Roblox</a></p>
-                      <div style="margin-top: 10px;">
-                    <span class="skill-tag">3D Modeling</span>
-                    <span class="skill-tag">UI Manipulation and Creation</span>
-                    <span class="skill-tag">Vector3 Physics Manipulation</span>
-                    <span class="skill-tag">3D Scripting</span>
-                     <span class="skill-tag">Client-Server Relationship</span>
-                </div>
+                <h3>RPTR</h3>
+                <p><strong>x86-64 Assembly utility for repeatedly running terminal commands and comparing output between scans.</strong></p>
+                <p>Refresh command output at a chosen interval to monitor changes across sequential runs.</p>
+                <p><strong>GitHub Repository:</strong> <a href="https://github.com/austinjump-sec/RPTR" style="color: #e7f5d7;">austinjump-sec/RPTR</a></p>
+                <div style="margin-top: 10px;"><span class="skill-tag">x86-64 Assembly</span><span class="skill-tag">Linux</span><span class="skill-tag">Terminal Automation</span><span class="skill-tag">Output Comparison</span></div>
+            </div>
+            <div class="project-card">
+                <h3>Assembly-Music-Boilerplate</h3>
+                <p><strong>x86-64 Assembly example that generates simple music audio directly from assembly code.</strong></p>
+                <p>Includes a reusable music engine template and a song example. The engine encodes notes as pitch-period and duration pairs, generates square-wave samples, and writes raw audio to standard output for playback.</p>
+                <p><strong>GitHub Repository:</strong> <a href="https://github.com/austinjump-sec/Assembly-Music-Boilerplate" style="color: #e7f5d7;">austinjump-sec/Assembly-Music-Boilerplate</a></p>
+                <div style="margin-top: 10px;"><span class="skill-tag">x86-64 Assembly</span><span class="skill-tag">Audio Synthesis</span><span class="skill-tag">Linux System Calls</span><span class="skill-tag">Low-level Programming</span></div>
             </div>
             <div class="project-card">
                 <h3>PrivaText</h3>
                 <p><strong>End-to-end encrypted serverless chat application</strong></p>
                 <p>Demonstrates cryptographic patterns and privacy-conscious design. Features:</p>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Client-side encryption implementation</li>
-                    <li>Password-based key derivation</li>
-                    <li>Serverless architecture design</li>
-                    <li>Decentralized messaging concepts</li>
-                </ul>
+                <ul style="margin-left: 20px; margin-top: 10px;"><li>Client-side encryption implementation</li><li>Password-based key derivation</li><li>Serverless architecture design</li><li>Decentralized messaging concepts</li></ul>
                 <p style="margin-top: 15px;"><strong>Tech Stack:</strong> JavaScript, Cryptography, Serverless, Nostr protocol</p>
                 <p><strong>Live Demo:</strong> <a href="https://privatext.oneapp.dev" style="color: #e7f5d7;">privatext.oneapp.dev</a></p>
-              <div style="margin-top: 10px;">
-                    <span class="skill-tag">Cryptography</span>
-                    <span class="skill-tag">Serverless</span>
-                    <span class="skill-tag">Security Architecture</span>
-                    <span class="skill-tag">Full-Stack</span>
-                </div>
+                <div style="margin-top: 10px;"><span class="skill-tag">Cryptography</span><span class="skill-tag">Serverless</span><span class="skill-tag">Security Architecture</span><span class="skill-tag">Full-Stack</span></div>
             </div>
         </section>
 
         <section class="section">
-            <h2>Independent Security Auditing </h2>
+            <h2>Independent Security Auditing</h2>
             <p>Actively rooting machines on HackTheBox and writing write-ups to apply hands-on exploitation and system administration studies.</p>
             <p>Starting freelance auditing work on HackerOne</p>
-                        <p style="margin-top: 10px;">
-                <a href="https://app.hackthebox.com/users/3286941?profile-top-tab=machines&ownership-period=1M&profile-bottom-tab=prolabs" style="color: #e7f5d7;">
-                    View HTB Profile →
-                </a>
-                <br>
-                <a href="https://github.com/austinjump-sec/HTB-Write-Ups" style="color: #e7f5d7;">
-                View HTB Write-Ups →
-                </a>
-                <br>
-                   <a href="https://hackerone.com/austinjump-sec?type=user" style="color: #e7f5d7;">
-                    View HackerOne Profile →
-                </a> 
-               
-            </p>
+            <p style="margin-top: 10px;"><a href="https://app.hackthebox.com/users/3286941?profile-top-tab=machines&ownership-period=1M&profile-bottom-tab=prolabs" style="color: #e7f5d7;">View HTB Profile →</a><br><a href="https://github.com/austinjump-sec/HTB-Write-Ups" style="color: #e7f5d7;">View HTB Write-Ups →</a><br><a href="https://hackerone.com/austinjump-sec?type=user" style="color: #e7f5d7;">View HackerOne Profile →</a></p>
         </section>
-       
 
         <section class="section">
-            <h2>Certifications & Training</h2>
-            <ul style="margin-left: 20px;">
-                <li><strong>CompTIA Security+</strong> (In Progress - targeting Q3 2026)</li>
-                <li><strong>HackTheBox Rank:</strong> 21 and growing through consistent machine practice</li>
-                <li><strong>Self-Taught Security Research:</strong> 1+ year of independent study</li>
-                <li><strong>High School Senior:</strong> Expected graduation May 2027</li>
-            </ul>
+            <h2>Certifications &amp; Training</h2>
+            <ul style="margin-left: 20px;"><li><strong>CompTIA Security+</strong> (In Progress - targeting Q3 2026)</li><li><strong>HackTheBox Rank:</strong> 21 and growing through consistent machine practice</li><li><strong>Self-Taught Security Research:</strong> 1+ year of independent study</li><li><strong>High School Senior:</strong> Expected graduation May 2027</li></ul>
         </section>
-
 
         <section class="section">
             <h2>Technical Skills</h2>
-            <div class='skills-category'>
-                Core Strengths <br>
-                <span class="skill-tag">Web Security</span>
-                <span class="skill-tag">Serverless Architecture</span>
-                <span class="skill-tag">Database Security</span>
-                <span class="skill-tag">SQL, Python, Javascript, Lua, Assembly, C (reading and writing) </span>
-                <span class="skill-tag">Terminal, Bash, Powershell</span>
-                <span class="skill-tag">Vulnerability Analysis</span>
-                <span class="skill-tag">Linux and Windows Internals</span>
-                <span class="skill-tag">Network Security</span>
-                <span class="skill-tag">Web, Network, OS, and Authentication Protocols</span>
-                <span class="skill-tag">Cryptography</span>
+            <div class="skills-category">Core Strengths<br>
+                <span class="skill-tag">Web Security</span><span class="skill-tag">Serverless Architecture</span><span class="skill-tag">Database Security</span><span class="skill-tag">SQL, Python, Javascript, Lua, Assembly, C (reading and writing)</span><span class="skill-tag">Terminal, Bash, Powershell</span><span class="skill-tag">Vulnerability Analysis</span><span class="skill-tag">Linux and Windows Internals</span><span class="skill-tag">Network Security</span><span class="skill-tag">Web, Network, OS, and Authentication Protocols</span><span class="skill-tag">Cryptography</span>
             </div>
         </section>
-
-
     </div>
 </body>
 </html>
