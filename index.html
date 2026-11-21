@@ -62,6 +62,10 @@
         .skill-tag { background: var(--accent-soft); color: var(--accent); border: 1px solid rgba(98, 230, 197, 0.25); padding: 4px 9px; margin: 5px 4px 0 0; border-radius: 2px; font: 600 0.72rem/1.4 "Courier New", monospace; }
         .skills-category { padding: 24px; color: var(--muted); }
         footer { border-top: 1px solid var(--line); color: var(--muted); }
+        .project-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+        .project-filters button { border: 1px solid var(--line); border-radius: 2px; background: var(--surface); color: var(--muted); padding: 8px 12px; font: 600 0.76rem/1.3 "Courier New", monospace; cursor: pointer; }
+        .project-filters button:hover, .project-filters button[aria-pressed="true"] { color: var(--bg); background: var(--accent); border-color: var(--accent); }
+        .project-filters button span { opacity: 0.75; }
         @media (max-width: 700px) { .container { padding: 34px 18px; } .stats { grid-template-columns: repeat(2, 1fr); } .project-card { padding: 21px; } }
         @media (max-width: 430px) { .stats { grid-template-columns: 1fr; } }
     </style>
@@ -74,16 +78,15 @@
             <div class="links">
                 <a href="https://github.com/austinjump-sec">GitHub</a>
                 <a href="https://app.hackthebox.com/users/3286941?profile-top-tab=machines&ownership-period=1M&profile-bottom-tab=prolabs">HackTheBox</a>
-                <a href="https://hackerone.com/austinjump-sec?type=user">HackerOne</a>
             </div>
         </header>
 
         <section class="section">
             <h2>Quick Overview</h2>
             <div class="stats">
-                <div class="stat-box"><div class="stat-number">12</div><div class="stat-label">HTB Machines Rooted</div></div>
-                <div class="stat-box"><div class="stat-number">3</div><div class="stat-label"><a href="https://github.com/austinjump-sec/HTB-Write-Ups" style="color: #e7f5d7;">Published HTB Writeups</a></div></div>
-                <div class="stat-box"><div class="stat-number">9</div><div class="stat-label">Production Projects</div></div>
+                <div class="stat-box"><div class="stat-number">13</div><div class="stat-label">HTB Machines Rooted</div></div>
+                <div class="stat-box"><div class="stat-number">4</div><div class="stat-label"><a href="https://github.com/austinjump-sec/HTB-Write-Ups" style="color: #e7f5d7;">Published HTB Writeups</a></div></div>
+                <div class="stat-box"><div class="stat-number">8</div><div class="stat-label">Production Projects</div></div>
                 <div class="offset-box"><div class="stat-box"><div class="stat-number">1</div><div class="stat-label">Closed Security Report</div></div></div>
                 <div class="offset-box"><div class="stat-box"><div class="stat-number">Security+</div><div class="stat-label">In Progress</div></div></div>
                 <div class="offset-box"><div class="stat-box"><div class="stat-number">2</div><div class="stat-label">Open Source PRs</div></div></div>
@@ -101,6 +104,8 @@
                     <li>Developing AI-assisted analysis and visualization of reconnaissance and exploitation results.</li>
                     <li>Implementing human-in-the-loop controls for security-sensitive actions.</li>
                     <li>Contributing architectural and product decisions to an early-stage security platform.</li>
+                    <li>Created licensing servers using fastapi and slowapi, as well as integrating with Supabase, AWS, and Stripe.</li>
+                    <li>Collaborated with a small team from MVP to production.</li>
                 </ul>
                 <a href="https://tritonsentinel.com" style="color: #e7f5d7;">View Website</a>
             </div>
@@ -134,7 +139,8 @@
 
         <section class="section">
             <h2>Featured Projects</h2>
-            <div class="project-card">
+            <div class="project-filters" role="group" aria-label="Filter projects by programming language" id="project-filters"></div>
+            <div class="project-card" data-languages="JavaScript">
                 <h3>Spot-The-Vuln</h3>
                 <p><strong>Interactive, competitive vulnerability identification platform</strong></p>
                 <p>A gamified CTF-style platform that teaches vulnerability spotting across multiple languages. Features real CVEs sourced from CVEfixes dataset, including:</p>
@@ -145,7 +151,7 @@
                 <p><strong>Live Demo:</strong> <a href="https://spot-the-vuln.firebaseapp.com/" style="color: #e7f5d7;">spot-the-vuln.firebaseapp.com</a></p>
                 <div style="margin-top: 10px;"><span class="skill-tag">Vulnerability Analysis</span><span class="skill-tag">CVE Research</span><span class="skill-tag">Full-Stack</span><span class="skill-tag">Firebase</span></div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-languages="JavaScript, C">
                 <h3>CoffeeAlarm</h3>
                 <p><strong>Android React Native application that utilizes ESP32 hardware and mDNS networking to physically press a coffee machine's button on alarm.</strong></p>
                 <p>Demonstrates mobile engineering, networking, DIY hardware, and Arduino computing. Tested firmware on a real ESP32 and built a working low-cost rig from repurposed household parts.</p>
@@ -155,7 +161,7 @@
                 <p><strong>GitHub Repo:</strong> <a href="https://github.com/austinjump-sec/Coffee-Alarm" style="color: #e7f5d7;">austinjump-sec/Coffee-Alarm</a></p>
                 <div style="margin-top: 10px;"><span class="skill-tag">Android Development</span><span class="skill-tag">React Native</span><span class="skill-tag">Android Architecture</span><span class="skill-tag">Hardware and Networking</span></div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-languages="Python">
                 <h3>API-SPY</h3>
                 <p><strong>Precise, fast, and tailorable directory brute forcer with API probing capabilities</strong></p>
                 <p>Demonstrates interactive design to process multiple operations at once, with one command. Features:</p>
@@ -164,7 +170,7 @@
                 <p><strong>GitHub Repo:</strong> <a href="https://github.com/austinjump-sec/API-SPY" style="color: #e7f5d7;">austinjump-sec/API-SPY</a></p>
                 <div style="margin-top: 10px;"><span class="skill-tag">Penetration Testing</span><span class="skill-tag">Web Security</span><span class="skill-tag">API</span><span class="skill-tag">HTTP</span></div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-languages="Assembly">
                 <h3>XSgrep</h3>
                 <p><strong>Extra Small ~200 LoC x86-64 Assembly text-search utility with a naive substring-search algorithm.</strong></p>
                 <p>Demonstrates low-level design, manual byte-level data management, and register manipulation. Features:</p>
@@ -172,7 +178,7 @@
                 <p><strong>GitHub Repository:</strong> <a href="https://github.com/austinjump-sec/XSgrep" style="color: #e7f5d7;">austinjump-sec/XSgrep</a></p>
                 <div style="margin-top: 10px;"><span class="skill-tag">x86-64 Assembly</span><span class="skill-tag">Algorithmic Design</span><span class="skill-tag">Register and Memory Management</span><span class="skill-tag">Linux Internals</span></div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-languages="Python">
                 <h3>Custom-RF-Kalman-Scanner-4-SDR</h3>
                 <p><strong>Accurate and lightweight SDR scanner for custom radio frequencies. Compatible with Raspberry Pi and requires an RTL-SDR adapter.</strong></p>
                 <p>Demonstrates RF and low-level hardware skills. Features:</p>
@@ -181,21 +187,25 @@
                 <p><strong>GitHub Repo:</strong> <a href="https://github.com/austinjump-sec/Custom-RF-Kalman-Scanner-4-SDR" style="color: #e7f5d7;">austinjump-sec/Custom-RF-Kalman-Scanner-4-SDR</a></p>
                 <div style="margin-top: 10px;"><span class="skill-tag">Radio Frequencies</span><span class="skill-tag">Low-level Protocols</span><span class="skill-tag">Low-level Hardware</span><span class="skill-tag">Algorithmic Filtering</span></div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-languages="Assembly">
                 <h3>RPTR</h3>
-                <p><strong>x86-64 Assembly utility for repeatedly running terminal commands and comparing output between scans.</strong></p>
-                <p>Refresh command output at a chosen interval to monitor changes across sequential runs.</p>
+                <p><strong>x86-64 Assembly utility that repeatedly runs a shell command at a chosen interval.</strong></p>
+                <p>Launches the command through <code>/bin/sh</code>, waits for it to finish, then runs it again after the specified delay. The command and refresh interval are supplied as arguments.</p>
+                <p><strong>Strong Features:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;"><li>Runs shell commands through <code>/bin/sh</code></li><li>Accepts a command and refresh interval as arguments</li><li>Waits for each command to finish before repeating it</li><li>Uses low-level Linux system calls in x86-64 Assembly</li></ul>
                 <p><strong>GitHub Repository:</strong> <a href="https://github.com/austinjump-sec/RPTR" style="color: #e7f5d7;">austinjump-sec/RPTR</a></p>
                 <div style="margin-top: 10px;"><span class="skill-tag">x86-64 Assembly</span><span class="skill-tag">Linux</span><span class="skill-tag">Terminal Automation</span><span class="skill-tag">Output Comparison</span></div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-languages="Assembly">
                 <h3>Assembly-Music-Boilerplate</h3>
-                <p><strong>x86-64 Assembly example that generates simple music audio directly from assembly code.</strong></p>
-                <p>Includes a reusable music engine template and a song example. The engine encodes notes as pitch-period and duration pairs, generates square-wave samples, and writes raw audio to standard output for playback.</p>
+                <p><strong>x86-64 Assembly music engine that generates raw square-wave audio from a note-and-duration sequence.</strong></p>
+                <p>Includes a reusable engine template and song example. Notes are represented by pitch periods, with durations measured in samples; generated audio is written to standard output. For playback, pipe the output to <code>aplay</code> or <code>/dev/dsp</code>.</p>
+                <p><strong>Strong Features:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;"><li>Generates square-wave audio samples in x86-64 Assembly</li><li>Defines melodies as reusable note-and-duration sequences</li><li>Supports rests and configurable note durations</li><li>Writes raw audio to standard output for playback through <code>aplay</code> or <code>/dev/dsp</code></li></ul>
                 <p><strong>GitHub Repository:</strong> <a href="https://github.com/austinjump-sec/Assembly-Music-Boilerplate" style="color: #e7f5d7;">austinjump-sec/Assembly-Music-Boilerplate</a></p>
                 <div style="margin-top: 10px;"><span class="skill-tag">x86-64 Assembly</span><span class="skill-tag">Audio Synthesis</span><span class="skill-tag">Linux System Calls</span><span class="skill-tag">Low-level Programming</span></div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-languages="JavaScript">
                 <h3>PrivaText</h3>
                 <p><strong>End-to-end encrypted serverless chat application</strong></p>
                 <p>Demonstrates cryptographic patterns and privacy-conscious design. Features:</p>
@@ -209,21 +219,55 @@
         <section class="section">
             <h2>Independent Security Auditing</h2>
             <p>Actively rooting machines on HackTheBox and writing write-ups to apply hands-on exploitation and system administration studies.</p>
-            <p>Starting freelance auditing work on HackerOne</p>
-            <p style="margin-top: 10px;"><a href="https://app.hackthebox.com/users/3286941?profile-top-tab=machines&ownership-period=1M&profile-bottom-tab=prolabs" style="color: #e7f5d7;">View HTB Profile →</a><br><a href="https://github.com/austinjump-sec/HTB-Write-Ups" style="color: #e7f5d7;">View HTB Write-Ups →</a><br><a href="https://hackerone.com/austinjump-sec?type=user" style="color: #e7f5d7;">View HackerOne Profile →</a></p>
-        </section>
-
+            <p style="margin-top: 10px;"><a href="https://app.hackthebox.com/users/3286941?profile-top-tab=machines&ownership-period=1M&profile-bottom-tab=prolabs" style="color: #e7f5d7;">View HTB Profile →</a><br><a href="https://github.com/austinjump-sec/HTB-Write-Ups" style="color: #e7f5d7;">View HTB Write-Ups →</a><br>
         <section class="section">
             <h2>Certifications &amp; Training</h2>
-            <ul style="margin-left: 20px;"><li><strong>CompTIA Security+</strong> (In Progress - targeting Q3 2026)</li><li><strong>HackTheBox Rank:</strong> 21 and growing through consistent machine practice</li><li><strong>Self-Taught Security Research:</strong> 1+ year of independent study</li><li><strong>High School Senior:</strong> Expected graduation May 2027</li></ul>
+            <ul style="margin-left: 20px;"><li><strong>CompTIA Security+</strong> (In Progress - targeting Q1 2027)</li><li><strong>HackTheBox Rank:</strong> 21 and growing through consistent machine practice</li><li><strong>Self-Taught Security Research:</strong> 1+ year of independent study</li><li><strong>High School Senior:</strong> Expected graduation May 2027</li></ul>
         </section>
 
         <section class="section">
             <h2>Technical Skills</h2>
             <div class="skills-category">Core Strengths<br>
-                <span class="skill-tag">Web Security</span><span class="skill-tag">Serverless Architecture</span><span class="skill-tag">Database Security</span><span class="skill-tag">SQL, Python, Javascript, Lua, Assembly, C (reading and writing)</span><span class="skill-tag">Terminal, Bash, Powershell</span><span class="skill-tag">Vulnerability Analysis</span><span class="skill-tag">Linux and Windows Internals</span><span class="skill-tag">Network Security</span><span class="skill-tag">Web, Network, OS, and Authentication Protocols</span><span class="skill-tag">Cryptography</span>
+                <span class="skill-tag">Web Security</span><span class="skill-tag">Serverless Architecture</span><span class="skill-tag">Database Security</span><span class="skill-tag">SQL, Python, Javascript, Lua, Assembly, C (reading and writing)</span><span class="skill-tag"> Bash, Powershell</span><span class="skill-tag">Vulnerability Analysis</span><span class="skill-tag">Linux and Windows Internals</span><span class="skill-tag">Network Security</span><span class="skill-tag">Web, Network, OS, and Authentication Protocols</span><span class="skill-tag">Cryptography</span>
             </div>
         </section>
     </div>
+    <script>
+        const projectCards = [...document.querySelectorAll(".section h2")]
+            .find((heading) => heading.textContent.trim() === "Featured Projects")
+            ?.parentElement.querySelectorAll(".project-card[data-languages]");
+        const filterBar = document.getElementById("project-filters");
+
+        if (projectCards && filterBar) {
+            const projects = [...projectCards];
+            const languages = [...new Set(projects.flatMap((card) =>
+                card.dataset.languages.split(",").map((language) => language.trim())
+            ))].sort();
+
+            const addFilter = (label, count, language) => {
+                const button = document.createElement("button");
+                button.type = "button";
+                button.setAttribute("aria-pressed", String(language === "all"));
+                button.innerHTML = `${label} <span>(${count})</span>`;
+                button.addEventListener("click", () => {
+                    filterBar.querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", "false"));
+                    button.setAttribute("aria-pressed", "true");
+                    projects.forEach((card) => {
+                        const cardLanguages = card.dataset.languages.split(",").map((item) => item.trim());
+                        card.hidden = language !== "all" && !cardLanguages.includes(language);
+                    });
+                });
+                filterBar.appendChild(button);
+            };
+
+            addFilter("All", projects.length, "all");
+            languages.forEach((language) => {
+                const count = projects.filter((card) =>
+                    card.dataset.languages.split(",").map((item) => item.trim()).includes(language)
+                ).length;
+                addFilter(language, count, language);
+            });
+        }
+    </script>
 </body>
 </html>
